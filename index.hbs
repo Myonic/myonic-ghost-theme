@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     {{!-- Document Settings --}}
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    {{!-- Page Meta --}}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />{{!-- Page Meta --}}
     <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
-
-    {{!-- Mobile Meta --}}
+    <meta name="description" content="{{meta_description}}" />{{!-- Mobile Meta --}}
     <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    {{!-- Brand icon --}}
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
-
-    {{!-- Styles'n'Scripts --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />{{!-- Brand icon --}}
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="shortcut icon" href="{{asset "img/favicon.ico"}}">{{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -30,42 +26,44 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 
     <script type="text/javascript">
-    $(document).ready(function(){
-      resizeDiv();
-    });
+        $(document).ready(function() {
+            resizeDiv();
+        });
 
-    window.onresize = function(event) {
-      resizeDiv();
-    }
+        window.onresize = function(event) {
+            resizeDiv();
+        }
 
-    function resizeDiv() {
-      vpw = $(window).width();
-      vph = $(window).height();
-      $('.tile').css({'height': vph + 'px'});
-    }
+        function resizeDiv() {
+            vpw = $(window).width();
+            vph = $(window).height();
+            $('.tile').css({
+                'height': vph + 'px'
+            });
+        }
     </script>
 
     <script type="text/javascript">
-    $(document).ready(function () {
-      var top = $('.navbar').offset().top;
-      $(window).scroll(function (event) {
-        var y = $(this).scrollTop();
-        if (y >= top)
-          $('.navbar').addClass('float');
-        else
-          $('.navbar').removeClass('float');
-      });
-    });
+        $(document).ready(function() {
+            var top = $('.navbar').offset().top;
+            $(window).scroll(function(event) {
+                var y = $(this).scrollTop();
+                if (y >= top)
+                    $('.navbar').addClass('float');
+                else
+                    $('.navbar').removeClass('float');
+            });
+        });
     </script>
 
     <script type="text/javascript">
-    $(function(){
-      $.scrollIt({
-        easing: 'easeOutCubic',      // the easing function for animation
-        scrollTime: 800,       // how long (in ms) the animation takes
-        activeClass: 'active', // class given to the active nav element
-      });
-    });
+        $(function() {
+            $.scrollIt({
+                easing: 'easeOutCubic', // the easing function for animation
+                scrollTime: 800, // how long (in ms) the animation takes
+                activeClass: 'active', // class given to the active nav element
+            });
+        });
     </script>
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
@@ -73,107 +71,147 @@
 </head>
 
 <body class="{{body_class}}">
-  <div class="tile" id="tile1" data-scroll-index="0">
-    <div class="cont-1">
-      <div class="logo"><img src="{{ asset "img/logo.png"}}"/></div>
-      <hr>
-      <ul class="navbar">
-        <a href="" data-scroll-nav="0"><img class="n-logo" src="{{@blog.logo}}"></a>
-        <li><a href="" data-scroll-nav="1">About</a></li>
-        <li><a href="" data-scroll-nav="2">Team</a></li>
-        <li><a href="" data-scroll-nav="3">Contact</a></li>
-        {{#foreach @blog.navigation}}
-          <li><a href="{{url absolute="true"}}">{{label}}</a></li>
-        {{/foreach}}
-      </ul>
+    <div class="tile" id="tile1" data-scroll-index="0">
+        <div class="cont-1">
+            <div class="logo"><img src="{{ asset "img/logo.png"}}" /></div>
+            <hr>
+            <ul class="navbar">
+                <a href="" data-scroll-nav="0"><img class="n-logo" src="{{ asset "img/logo-s.png"}}"></a>
+                <li><a href="" data-scroll-nav="1">About</a></li>
+                <li><a href="" data-scroll-nav="2">Team</a></li>
+                <li><a href="" data-scroll-nav="3">Contact</a></li>
+                <li><a href="" data-scroll-nav="4">Blog</a></li>
+                {{#foreach @blog.navigation}}
+                    <li><a href="{{url absolute="true"}}">{{label}}</a></li>
+                {{/foreach}}
+            </ul>
+        </div>
     </div>
-  </div>
 
-  <div class="tile" id="tile2" data-scroll-index="1">
-    <div class="cont-2">
-      <h1>We are Myonic.</h1>
-      <h2 class="sub" style="font-weight:normal">Creating enabling technology for users with paralysis.<br>We give users back the ability to control their own muscles with our wearable device.</h2>
+    <div class="tile" id="tile2" data-scroll-index="1">
+        <div class="cont-2">
+            <h1>We are Myonic.</h1>
+            <h2 class="sub" style="font-weight:normal">Creating enabling technology for users with paralysis.<br>We give users back the ability to control their own muscles with our wearable device.</h2>
+        </div>
     </div>
-  </div>
 
-  <div class='tile' id='tile3' data-scroll-index="2">
-    <div class="cont-3">
-      <img class="person" src="{{asset "img/nick.jpg"}}">
-      <h2 class="name">Nick Titus</h2>
-      <p class="desc"><b>Chief Executive Officer</b> <br> As CEO, Nick Titus ensures that the short term and long term objectives of Myonic fit the company vision. In addition, Nick leads the team in product development and handles all business affairs.</p>
+    <div class='tile' id='tile3' data-scroll-index="2">
+        <div class="cont-3">
+            <img class="person" src="{{asset "img/nick.jpg"}}">
+            <div>
+                <h2 class="name">Nick Titus</h2>
+                <p class="desc"><b>Chief Executive Officer</b>
+                    <br> As CEO, Nick Titus ensures that the short term and long term objectives of Myonic fit the company vision. In addition, Nick leads the team in product development and handles all business affairs.</p>
+            </div>
+        </div>
+        <div class="cont-3">
+            <img class="person" src="{{asset "img/sam.jpg"}}">
+            <div>
+                <h2 class="name">Sam Everett</h2>
+                <p class="desc"><b>Chief Financial Officer</b>
+                    <br> As CFO, Sam Everett manages all financial tasks of Myonic. In addition to the numbers, Sam is also in charge of Myonic's marketing efforts; as well as product design.</p>
+            </div>
+        </div>
+        <div class="cont-3">
+            <img class="person" src="{{asset "img/nate.jpg"}}">
+            <div>
+                <h2 class="name">Nate Petersen</h2>
+                <p class="desc"><b>Chief Technical Officer</b>
+                    <br> As CTO, Nate Petersen develops the user interface and hardware components at Myonic. Nate ensures the users experience is of the highest standard through all stages of their interaction with the product.</p>
+            </div>
+        </div>
+        <div class="cont-3">
+            <img class="person" src="{{asset "img/ben.jpg"}}">
+            <div>
+                <h2 class="name">Ben Saltz</h2>
+                <p class="desc"><b>Chief Innovation Officer</b>
+                    <br> As CIO, Ben Saltz creates and manages Branding for Myonic. In addition Ben manages the web interface for our product Users. His role entails managing all creative production.</p>
+            </div>
+        </div>
     </div>
-    <div class="cont-3">
-      <img class="person" src="{{asset "img/sam.jpg"}}">
-      <h2 class="name">Sam Everett</h2>
-      <p class="desc"><b>Chief Financial Officer</b> <br> As CFO, Sam Everett manages all financial tasks of Myonic. In addition to the numbers, Sam is also in charge of Myonic's marketing efforts; as well as product design.</p>
-    </div>
-    <div class="cont-3">
-      <img class="person" src="{{asset "img/nate.jpg"}}">
-      <h2 class="name">Nate Petersen</h2>
-      <p class="desc"><b>Chief Technical Officer</b> <br> As CTO, Nate Petersen develops the user interface and hardware components at Myonic. Nate ensures the users experience is of the highest standard through all stages of their interaction with the product.</p>
-    </div>
-    <div class="cont-3">
-      <img class="person" src="{{asset "img/ben.jpg"}}">
-      <h2 class="name">Ben Saltz</h2>
-      <p class="desc"><b>Chief Innovation Officer</b> <br> As CIO, Ben Saltz creates and manages Branding for Myonic. In addition Ben manages the web interface for our product Users. His role entails managing all creative production.</p>
-    </div>
-  </div>
 
-  <div class="tile" id="tile4" data-scroll-index="3">
-    <!-- <form>
+    <div class="tile" id="tile4" data-scroll-index="3">
+        <!-- <form>
       <input type="text" placeholder="Full Name">
       <input type="text" placeholder="Email">
       <textarea placeholder="Message"></textarea>
       <i>recaptcha</i>
     </form> -->
-    <div>
-      <center>
-        <h2 class="contactt">Contact Nick Titus</h2>
-        <a href="mailto:nick@myonic.tech" style="text-decoration:none; cursor:pointer; color:#3f51b5" class="contactt">nick@myonic.tech</a>
-        <br>
-        <br>
-        <i class="contactt">(720) 837-8077</i>
-      </center>
+        <div>
+            <center>
+                <h2 class="contactt">Contact Us</h2>
+                <a href="mailto:contact@myonic.tech" style="text-decoration:none; cursor:pointer; color:#3f51b5" class="contactt">contact@myonic.tech</a>
+                <br>
+                <br>
+                <i class="contactt">(720) 837-8077</i>
+                <br>
+                <br>
+                <div>
+                    <a href="https://twitter.com/myonic"><img class="social-icon" width="50px" src="{{asset "img/social/twitter.png"}}"></a>
+                    <a href="https://facebook.com/myonic"><img class="social-icon" width="50px" src="{{asset "img/social/facebook.png"}}"></a>
+                    <a href="https://plus.google.com/u/1/b/107100038544431376490/107100038544431376490"><img class="social-icon" width="50px" src="{{asset "img/social/google.png"}}"></a>
+                    <a href="https://www.youtube.com/channel/UC8zHL1zFANrUnoW829BW6cQ"><img class="social-icon" width="50px" src="{{asset "img/social/youtube.png"}}"></a>
+                </div>
+            </center>
+        </div>
     </div>
-  </div>
 
-  <script type="text/javascript">
-    window.sr = ScrollReveal();
-      sr.reveal('.logo', {
-        origin   : "top",
-        distance : "24px",
-        duration : 1500,
-        scale    : 1.05
-      });
-      sr.reveal('hr', {delay: 600});
-      sr.reveal('.navbar', {delay: 1200});
-      sr.reveal('h1', {
-        duration : 1500,
-        reset: true
-      });
-      sr.reveal('.sub', {
-        duration : 1500,
-        delay: 600,
-        reset: true
-      }, 30);
-      sr.reveal('.name', {
-        delay: 600,
-        reset: true
-      })
-      sr.reveal('.person', {
-        reset: true
-      }, 15)
-      sr.reveal('.desc', {
-        reset: true,
-        delay: 1200
-      }, 30)
-      sr.reveal('.contactt', {
-        reset: true
-      }, 15)
-  </script>
+    <a name="blog"></a>
+    <div class="content" data-scroll-index="4">
+        {{> "loop"}}
+    </div>
+    <h1 class="ajax-message"></h1>
 
-  <div class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</div>
+    <script type="text/javascript">
+        window.sr = ScrollReveal();
+        sr.reveal('.logo', {
+            origin: "top",
+            distance: "24px",
+            duration: 1500,
+            scale: 1.2
+        });
+        sr.reveal('hr', {
+            delay: 600
+        });
+        sr.reveal('.navbar', {
+            delay: 1200
+        });
+        sr.reveal('h1', {
+            duration: 1500,
+            reset: true
+        });
+        sr.reveal('.sub', {
+            duration: 1500,
+            delay: 600,
+            reset: true
+        }, 30);
+        sr.reveal('.name', {
+            delay: 200,
+            reset: true,
+            scale: 1.5,
+            mobile: false
+        })
+        sr.reveal('.person', {
+            reset: true
+        }, 15)
+        sr.reveal('.desc', {
+            reset: true,
+            delay: 220,
+            mobile: false
+        }, 30)
+        sr.reveal('.contactt', {
+            reset: true,
+            delay: 200
+        }, 15)
+        sr.reveal('.social-icon', {
+            reset: true,
+            delay: 200
+        }, 15)
+    </script>
 
-  {{ghost_foot}}
+    <div class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</div>
 
+    {{ghost_foot}}
+
+    <script type="text/javascript" src="{{asset "js/site-ajax.js"}}"></script>
 </body>
