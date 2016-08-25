@@ -378,12 +378,12 @@ article.post-view footer .footer-grid td {
 
 article.post-view footer .footer-grid .share-buttons {
   text-align: center;
-  padding: 0 4px 0 0;
 }
 
 article.post-view footer .footer-grid .share-button {
   -webkit-filter: brightness(10);
   filter: brightness(10);
+  padding: 0 4px 0 0;
 }
 
 article.post-view footer .footer-grid .share-button:hover {

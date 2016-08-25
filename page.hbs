@@ -1,31 +1,142 @@
 {{!< default}}
 
-{{!-- This is a page template. A page outputs content just like any other post, and has all the same
-    attributes by default, but you can also customise it to behave differently if you prefer. --}}
+{{!-- The comment above "< default" means - insert everything in this file into
+    the {{{body}}{{!--TODO: MAKE THIS PAGE SIZE FOR MOBILE--}}
 
-{{!-- Everything inside the #post tags pulls data from the page --}}
+<script type="text/javascript">
+    function scrollFooter(scrollY, heightFooter) {
+
+        if (scrollY >= heightFooter) {
+            $('.post-footer').css({
+                'bottom': '0px'
+            });
+        } else {
+            $('.post-footer').css({
+                'bottom': '-' + heightFooter + 'px'
+            });
+        }
+    }
+
+    $(window).load(function() {
+        var windowHeight = $(window).height(),
+            footerHeight = $('footer').height(),
+            heightDocument = (windowHeight) + ($('.content').height()) + ($('footer').height()) - 20;
+
+        scrollFooter(window.scrollY, footerHeight);
+
+        // ao dar rolagem
+        window.onscroll = function() {
+            var scroll = window.scrollY;
+
+            $('.post-header').css({
+                'background-position-y': 50 - (scroll * 100 / heightDocument) + '%'
+            });
+
+            scrollFooter(scroll, footerHeight);
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var top = $('.navbar-post').offset().top;
+        $(window).scroll(function(event) {
+            var y = $(this).scrollTop();
+            if (y >= top)
+                $('.navbar-post').addClass('float');
+            else
+                $('.navbar-post').removeClass('float');
+        });
+    });
+</script>
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-        {{#if @blog.navigation}}
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-        {{/if}}
-    </nav>
-</header>
+    <main class="post-content">
+        <article class="post-view">
 
-<main class="content" role="main">
-    <article class="{{post_class}}">
+            <header class="post-header" style="background-image:url({{#if image}}{{image}}{{else}}https://unsplash.it/1920/1080/?random&blur{{/if}})">
+                <a href="/#blog"><img width="300px" class="n-logo" src="{{ asset "img/logo-s-l.png"}}"></a>
+                <h1 class="post-title">{{title}}</h1>
+                <section class="post-meta">
+                    <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time> {{tags prefix=" on "}}
+                </section>
+            </header>
 
-        <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-        </header>
+            <ul class="navbar-post">
+                <a href="/#blog"><img class="n-logo" src="{{ asset "img/logo-s.png"}}"></a>
+                {{#prev_post}}
+                    <li><a class="more-np" href="{{url}}"><b>Previous:</b> {{title}} </a></li>
+                {{/prev_post}}
+                {{#next_post}}
+                    <li><a class="more-np" href="{{url}}"><b>Next:</b> {{title}}</a></li>
+                {{/next_post}}
+            </ul>
 
-        <section class="post-content">
-            {{content}}
-        </section>
+            <section class="post-content">
 
-    </article>
-</main>
+                <div class="post-content-wrapper">
+                    {{content}}
+                </div>
+            </section>
+
+            <footer class="post-footer">
+
+                {{!-- Everything inside the #author tags pulls data from the author --}}
+                {{#author}}
+                    <table class="footer-grid">
+                        <tr>
+                            <td rowspan="2" class="author-image-c">
+                                {{#if image}}
+                                    <a href="{{url}}"><img class="author-image" src="{{image}}" /></a>
+                                {{/if}}
+                            </td>
+                            <td class="author-name">
+                                <i>Author</i>
+                                <br>
+                                <a href="{{url}}">{{name}}</a></td>
+                            <td>
+                                <h4>Share this post</h4></td>
+                            <td rowspan="2">
+                                {{#if @labs.subscribers}}
+                                    <section class="gh-subscribe">
+                                        <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>
+                                        <p>Get the latest posts delivered right to your inbox.</p> {{!--TODO: MAKE THIS HAVE A WHITE BACKGROUND--}}
+                                        {{subscribe_form placeholder="Your email address" }}
+                                            <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
+                                    </section>
+                                {{/if}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="author-info">
+                                {{#if location}}
+                                    <p class="author-location icon-location"><i>{{location}}</i></p>
+                                {{/if}}
+                                {{#if website}}
+                                    <p class="author-link icon-link"><a href="{{website}}">{{website}}</a></p>
+                                {{/if}}
+                                {{#if bio}}
+                                    <p>{{bio}}</p>
+                                {{/if}}
+                                <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                            </td>
+                {{/author}}
+                <td class="share-buttons">
+                    <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><img class="share-button" width="50px" src="{{asset "img/social/twitter.png"}}" /></a>
+                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><img class="share-button" width="50px" src="{{asset "img/social/facebook.png"}}" /></a>
+                    <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><img class="share-button" width="50px" src="{{asset "img/social/google.png"}}" /></a>
+                    </div>
+                </td>
+                </tr>
+                <tr>
+                    <td colspan="4">&copy; {{date format="YYYY"}} <a href="{{@blog.url}}">Myonic Technologies Inc.</a> All Rights Reserved.</td>
+                </tr>
+                </table>
+            </footer>
+
+        </article>
+    </main>
+
 {{/post}}
