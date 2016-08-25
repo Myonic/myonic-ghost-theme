@@ -8,3 +8,4 @@
 - Make style for post links
 - Featured posts
 - Add "published" before date
+- Lazy load images
