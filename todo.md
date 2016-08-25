@@ -7,3 +7,4 @@
 - On pages, remove previous next pagination
 - Make style for post links
 - Featured posts
+- Add "published" before date
