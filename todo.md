@@ -6,3 +6,4 @@
 - On pages, remove date
 - On pages, remove previous next pagination
 - Make style for post links
+- Featured posts
