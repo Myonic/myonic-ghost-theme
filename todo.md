@@ -3,6 +3,7 @@
 - Add style to author and tag feed pages
 - Add area for featured posts
 - Make post footer look nicer
+- Fix share links
 - On pages, remove date
 - On pages, remove previous next pagination
 - Make style for post links
