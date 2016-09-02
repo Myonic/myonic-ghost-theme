@@ -7,8 +7,8 @@
 - On pages, remove date
 - On pages, remove previous next pagination
 - Make style for post links
-- Featured posts
 - Add "published" before date
 - Lazy load images
 - Fix in-post image sizing
 - Fix Google search results not displaying description of site
+- [Caching](https://developers.google.com/speed/docs/insights/LeverageBrowserCaching)
