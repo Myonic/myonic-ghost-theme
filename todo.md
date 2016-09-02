@@ -10,3 +10,5 @@
 - Featured posts
 - Add "published" before date
 - Lazy load images
+- Fix in-post image sizing
+- Fix Google search results not displaying description of site
