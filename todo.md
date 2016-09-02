@@ -11,4 +11,5 @@
 - Lazy load images
 - Fix in-post image sizing
 - Fix Google search results not displaying description of site
+- Button and textbox styling
 - [Caching](https://developers.google.com/speed/docs/insights/LeverageBrowserCaching)
