@@ -1,4 +1,5 @@
 # Todo
+- Add more homepage company information
 - Add post tags to main page feed
 - Add style to author and tag feed pages
 - Add area for featured posts
@@ -7,9 +8,11 @@
 - On pages, remove date
 - On pages, remove previous next pagination
 - Make style for post links
-- Add "published" before date
 - Lazy load images
 - Fix in-post image sizing
 - Fix Google search results not displaying description of site
 - Button and textbox styling
 - [Caching](https://developers.google.com/speed/docs/insights/LeverageBrowserCaching)
+- Add Twitter feed to contact tile
+- Fix pages and posts on mobile
+- Scroll to blog button on contact tile
