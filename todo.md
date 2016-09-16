@@ -10,9 +10,9 @@
 - Make style for post links
 - Lazy load images
 - Fix in-post image sizing
+- Check all post markup styling
 - Fix Google search results not displaying description of site
 - Button and textbox styling
 - [Caching](https://developers.google.com/speed/docs/insights/LeverageBrowserCaching)
 - Add Twitter feed to contact tile
 - Fix pages and posts on mobile
-- Scroll to blog button on contact tile
