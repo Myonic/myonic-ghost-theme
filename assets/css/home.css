@@ -431,7 +431,7 @@ article.post-view h1::after {
     content: "";
     min-height: 1px;
     min-width: 900px;
-    background-image: linear-gradient(to right, rgba(100, 100, 100, 0), rgba(100, 100, 100, 0.50), rgba(100, 100, 100, 0));
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.50), rgba(255, 255, 255, 0));
 }
 
 article.post-view h1,

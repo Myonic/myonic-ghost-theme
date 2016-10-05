@@ -8,6 +8,7 @@
 - On pages, remove date
 - On pages, remove previous next pagination
 - Make style for post links
+- Add "published" before date
 - Lazy load images
 - Fix in-post image sizing
 - Check all post markup styling

@@ -81,9 +81,7 @@
                 <li><a href="" data-scroll-nav="2">Team</a></li>
                 <li><a href="" data-scroll-nav="3">Contact</a></li>
                 <li><a href="" data-scroll-nav="4">Blog</a></li>
-                {{#foreach @blog.navigation}}
-                    <li><a href="{{url absolute="true"}}">{{label}}</a></li>
-                {{/foreach}}
+                {{navigation}}
             </ul>
         </div>
     </div>
@@ -154,6 +152,7 @@
                 </div>
             </center>
         </div>
+        <!-- <a href="" data-scroll-nav="4">Blog</a> -->
     </div>
 
     <a name="blog"></a>

@@ -5,27 +5,29 @@ $(document).ready(function() {
 
     //on scroll near bottom
     $(window).scroll(function() {
-        if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && moreToLoad) {
-            $(".ajax-message").text("Loading more...").show();
-            $.ajax({
-                //go grab the pagination number of posts on the next page and include the tags
-                url: ghost.url.api('posts', {
-                    limit: pagination,
-                    page: nextPage,
-                    include: 'tags,author'
-                }),
-                type: 'get'
-            }).done(function(data) {
-                //for each post returned
-                $.each(data.posts, function(i, post) {
-                    insertPost(post);
+        setTimeout(function() {
+            if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && moreToLoad) {
+                $(".ajax-message").text("Loading more...").show();
+                $.ajax({
+                    //go grab the pagination number of posts on the next page and include the tags
+                    url: ghost.url.api('posts', {
+                        limit: pagination,
+                        page: nextPage,
+                        include: 'tags,author'
+                    }),
+                    type: 'get'
+                }).done(function(data) {
+                    //for each post returned
+                    $.each(data.posts, function(i, post) {
+                        insertPost(post);
+                    });
+                    $(".ajax-message").text("").hide();
+                }).fail(function(err) {
+                    console.error(err);
+                    moreToLoad = false;
                 });
-                $(".ajax-message").text("").hide();
-            }).fail(function(err) {
-                console.error(err);
-                moreToLoad = false;
-            });
-        }
+            }
+        }, 3000)
     });
 
     function insertPost(postData) {
@@ -41,10 +43,10 @@ $(document).ready(function() {
         var monthIndex = date.getMonth();
         var year = date.getFullYear();
         var image;
-        if(postData.image == null){
-          image = "https://unsplash.it/1920/1080/?random&blur"
+        if (postData.image == null) {
+            image = "https://unsplash.it/1920/1080/?random&blur"
         } else {
-          image = postData.image
+            image = postData.image
         }
         var postInfo = '<article class="post" style="background-image:url(' + image + ')">\
         <a href="' + postData.url + '">\
