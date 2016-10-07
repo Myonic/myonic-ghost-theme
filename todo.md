@@ -17,3 +17,4 @@
 - [Caching](https://developers.google.com/speed/docs/insights/LeverageBrowserCaching)
 - Add Twitter feed to contact tile
 - Fix pages and posts on mobile
+- Make .gitignore
