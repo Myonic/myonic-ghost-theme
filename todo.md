@@ -18,3 +18,4 @@
 - Add Twitter feed to contact tile
 - Fix pages and posts on mobile
 - Make .gitignore
+- Change post font to Roboto Regular
