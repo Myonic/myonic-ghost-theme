@@ -7,15 +7,13 @@
 - Fix share links
 - On pages, remove date
 - On pages, remove previous next pagination
+- Maybe put tooltip on logo to go back home
 - Make style for post links
-- Add "published" before date
 - Lazy load images
 - Fix in-post image sizing
-- Check all post markup styling
-- Fix Google search results not displaying description of site
+- Check all post markdown styling
 - Button and textbox styling
 - [Caching](https://developers.google.com/speed/docs/insights/LeverageBrowserCaching)
 - Add Twitter feed to contact tile
 - Fix pages and posts on mobile
-- Make .gitignore
 - Change post font to Roboto Regular

@@ -1,7 +1,9 @@
 {{!< default}}
 
 {{!-- The comment above "< default" means - insert everything in this file into
-    the {{{body}}{{!--TODO: MAKE THIS PAGE SIZE FOR MOBILE--}}
+    the {{{body}}
+    {{!--TODO: MAKE THIS PAGE SIZE FOR MOBILE--}}
+{{!--TODO: MAKE PARTIAL SO POSTS AND PAGES SHARE CODE--}}
 
 <script type="text/javascript">
     function scrollFooter(scrollY, heightFooter) {
@@ -65,7 +67,7 @@
             </header>
 
             <ul class="navbar-post">
-                <a href="/#blog"><img class="n-logo" src="{{ asset "img/logo-s.png"}}"></a>
+                <a href="/#blog"><img class="s-logo" src="{{ asset "img/logo-s.png"}}"></a>
                 {{#prev_post}}
                     <li><a class="more-np" href="{{url}}"><b>Previous:</b> {{title}} </a></li>
                 {{/prev_post}}
@@ -75,7 +77,6 @@
             </ul>
 
             <section class="post-content">
-
                 <div class="post-content-wrapper">
                     {{content}}
                 </div>
