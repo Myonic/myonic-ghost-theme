@@ -1,4 +1,5 @@
 # Todo
+- Fix homepage navigation with dropdown
 - Add more homepage company information
 - Add style to author and tag feed pages
 - Add area for featured posts
