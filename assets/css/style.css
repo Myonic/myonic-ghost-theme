@@ -79,21 +79,19 @@ td, th{ padding: 0; }
   background:rgba(244,67,54,0.50);
 }
 input[type=text], input[type=email], textarea {
-  -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  -o-transition: all 0.30s ease-in-out;
+  -webkit-transition: all 0.20s ease-in-out;
+  -moz-transition: all 0.20s ease-in-out;
+  -ms-transition: all 0.20s ease-in-out;
+  -o-transition: all 0.20s ease-in-out;
   outline: none;
   padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid #DDDDDD;
+  border: 1px solid rgba(84, 168, 247, 0);
   display: inline-block;
   width:200px;
 }
 input[type=text]:focus, input[type=email]:focus, textarea:focus {
   box-shadow: 0 0 5px rgba(84, 168, 247, 1);
   padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
   border: 1px solid rgba(84, 168, 247, 1);
 }
 textarea {
@@ -315,6 +313,7 @@ article.post-view header {
 
 article.post-view header img {
     position: absolute;
+    width:300px;
     top: 50px;
     left: 50%;
     margin-left: -150px;
@@ -330,6 +329,7 @@ article.post-view header * {
 
 article.post-view header h1 {
     font-size: 60px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 article.post-view .post-content {
@@ -343,6 +343,11 @@ article.post-view .post-content .post-content-wrapper {
     margin: 0 auto 0;
     padding: 40px;
     line-height: 30px;
+    width: 900px;
+    font-family: 'Roboto', sans-serif;
+}
+
+article.post-view .post-content .post-content-wrapper img {
     width: 900px;
 }
 
@@ -358,6 +363,14 @@ article.post-view footer {
     bottom: -300px;
     position: fixed;
     color:#ddd;
+}
+
+article.post-view footer .footer-grid {
+  margin: auto;
+  margin-top: 30px;
+  width: 90%;
+  border-collapse: separate;
+  border-spacing: 16px 0;
 }
 
 article.post-view footer .author-image {
@@ -406,6 +419,17 @@ article.post-view footer .footer-grid td.author-name a {
   transition: color 0.3s;
 }
 
+article.post-view footer .footer-grid .copyright {
+  font-size: 8px;
+  color: rgba(200,200,200,0.3);
+  background: none;
+}
+article.post-view footer .footer-grid .copyright a {
+  font-size: 8px;
+  color: rgba(255,255,255,0.3);
+  background: none;
+}
+
 article.post-view footer .footer-grid a {
   text-decoration: none;
   font-weight: bold;
@@ -419,6 +443,42 @@ article.post-view footer .footer-grid a:hover {
 
 article.post-view footer .footer-grid td.author-info {
   width: 30%;
+}
+
+article.post-view footer .footer-grid td.subscribe {
+  background: #999;
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
+  padding: 16px;
+  border-radius: 3px;
+  color:#eee;
+}
+
+article.post-view footer .footer-grid td section.gh-subscribe button {
+  background: #eee;
+  color: #666;
+  border: none;
+  outline: none;
+  height:27px;
+  margin-left: 8px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+article.post-view footer .footer-grid td section.gh-subscribe button:hover {
+  background: #ddd;
+  color: #555;
+  box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.5);
+}
+article.post-view footer .footer-grid td section.gh-subscribe button:active {
+  background: #666;
+  color: #eee;
+  box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.5);
+}
+article.post-view footer .footer-grid td section.gh-subscribe .form-group {
+  display: inline-block;
+  float: left;
+}
+
+article.post-view footer .footer-grid td section.gh-subscribe .gh-subscribe-title {
+  text-align: left;
 }
 
 article.post-view h1 {
@@ -596,6 +656,96 @@ ul.navbar-post.float a img {
     padding: 0 0 0 8px;
     transform: translateY(0);
     transition: opacity 0.5s 0.25s, transform 0.5s 0.25s;
+  }
+}
+iframe#video {
+  width: 900px;
+  height: 506px;
+}
+
+@media all and (max-width:900px) and (min-width:0) {
+  /*-----------POST--------------*/
+  ul.navbar-post li {
+      display:none;
+  }
+
+  ul.navbar-post {
+      visibility: hidden;
+  }
+
+  ul.navbar-post.float {
+      visibility: visible;
+  }
+
+  article.post-view {
+      margin: 400px 0 300px;
+  }
+
+  article.post-view header {
+      height: 400px;
+  }
+
+  article.post-view .post-content .post-content-wrapper {
+      width: 90%;
+      padding:16px 0 0 0;
+  }
+
+  article.post-view .post-content .post-content-wrapper img {
+      width: 100%;
+  }
+
+  article.post-view header img {
+      width: 200px;
+      margin-left: -120px;
+  }
+
+  article.post-view header h1 {
+      font-size: 40px;
+  }
+
+  article.post-view footer .author-image {
+    display:none;
+  }
+
+  article.post-view footer .footer-grid {
+    margin: auto;
+    height:300px;
+  }
+
+  article.post-view footer .footer-grid td.author-image-c {
+    display:none;
+  }
+
+  article.post-view footer .footer-grid td.author-name {
+    display:none;
+  }
+
+  article.post-view footer .footer-grid td.author-info {
+    display:none;
+  }
+
+  article.post-view footer .footer-grid td.subscribe {
+    display: none;
+  }
+
+  article.post-view h1 {
+    font-size: 40px;
+  }
+
+  article.post-view h1::after {
+      width: 90%;
+      min-width: 90%;
+  }
+  iframe#video {
+    width: 500px;
+    height: 281px;
+  }
+}
+
+@media all and (max-width:320px) and (min-width:0){
+  iframe#video {
+    width: 300px;
+    height: 169px;
   }
 }
 

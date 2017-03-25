@@ -1,13 +1,8 @@
 # Todo
 - Add more homepage company information
-- Add post tags to main page feed
 - Add style to author and tag feed pages
 - Add area for featured posts
-- Make post footer look nicer
-- Fix share links
-- On pages, remove date
-- On pages, remove previous next pagination
-- Maybe put tooltip on logo to go back home
+- (Optional) Put tooltip on logo to go back home
 - Make style for post links
 - Lazy load images
 - Fix in-post image sizing
@@ -15,5 +10,4 @@
 - Button and textbox styling
 - [Caching](https://developers.google.com/speed/docs/insights/LeverageBrowserCaching)
 - Add Twitter feed to contact tile
-- Fix pages and posts on mobile
-- Change post font to Roboto Regular
+- Custom tech page template

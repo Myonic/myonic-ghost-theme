@@ -59,7 +59,7 @@
         <article class="post-view">
 
             <header class="post-header" style="background-image:url({{#if image}}{{image}}{{else}}https://unsplash.it/1920/1080/?random&blur{{/if}})">
-                <a href="/#blog"><img width="300px" class="n-logo" src="{{ asset "img/logo-s-l.png"}}"></a>
+                <a href="/#blog"><img class="n-logo" src="{{ asset "img/logo-s-l.png"}}"></a>
                 <h1 class="post-title">{{title}}</h1>
                 <section class="post-meta">
                     <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time> {{tags prefix=" on "}}
@@ -99,18 +99,18 @@
                                 <a href="{{url}}">{{name}}</a>
                             </td>
                             <td class="share-buttons" rowspan="2">
-                                <h4>Share this post</h4>
+                                <h3>Share this post</h3>
                                 <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><img class="share-button" width="50px" src="{{asset "img/social/twitter.png"}}" /></a>
                                 <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><img class="share-button" width="50px" src="{{asset "img/social/facebook.png"}}" /></a>
                                 <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><img class="share-button" width="50px" src="{{asset "img/social/google.png"}}" /></a>
                             </td>
-                            <td rowspan="2">
+                            <td rowspan="2" class="subscribe">
                                 {{#if @labs.subscribers}}
                                     <section class="gh-subscribe">
                                         <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>
-                                        <p>Get the latest posts delivered right to your inbox.</p> {{!--TODO: MAKE THIS HAVE A WHITE BACKGROUND--}}
+                                        <p>Get the latest Myonic news right to your inbox.</p> {{!--TODO: MAKE THIS HAVE A WHITE BACKGROUND--}}
                                         {{subscribe_form placeholder="Your email address" }}
-                                            <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
+                                            <p class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</p>
                                     </section>
                                 {{/if}}
                             </td>
@@ -131,7 +131,7 @@
                 {{/author}}
                 </tr>
                 <tr>
-                    <td colspan="4">&copy; {{date format="YYYY"}} <a href="{{@blog.url}}">Myonic Technologies Inc.</a> All Rights Reserved.</td>
+                    <td class="copyright" colspan="4">&copy; {{date format="YYYY"}} <a href="{{@blog.url}}">Myonic Technologies Inc.</a> All Rights Reserved.</td>
                 </tr>
                 </table>
             </footer>
