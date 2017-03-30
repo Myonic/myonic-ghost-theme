@@ -12,3 +12,5 @@
 - [Caching](https://developers.google.com/speed/docs/insights/LeverageBrowserCaching)
 - Add Twitter feed to contact tile
 - Custom tech page template
+- https://themes.ghost.org/docs/subscribers
+- https://themes.ghost.org/docs/amp

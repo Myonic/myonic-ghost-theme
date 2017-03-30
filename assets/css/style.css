@@ -584,7 +584,7 @@ ul.navbar-post.float a img {
 }
 
 /* == MOBILE == */
-@media all and (max-width: 600px) and (min-width: 0) {
+@media all and (max-width: 600px) and (min-width: 425px) {
   #tile1 .logo img {
     height: auto;
     width: auto;
@@ -742,10 +742,10 @@ iframe#video {
   }
 }
 
-@media all and (max-width:320px) and (min-width:0){
+@media all and (max-width:425px) and (min-width:0){
   iframe#video {
-    width: 300px;
-    height: 169px;
+    width: 300px !important;
+    height: 169px !important;
   }
 }
 
