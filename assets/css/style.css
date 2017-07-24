@@ -583,8 +583,12 @@ ul.navbar-post.float a img {
     opacity: 1;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 /* == MOBILE == */
-@media all and (max-width: 600px) and (min-width: 425px) {
+@media all and (max-width: 600px) {
   #tile1 .logo img {
     height: auto;
     width: auto;
@@ -625,7 +629,76 @@ ul.navbar-post.float a img {
     min-height:100px;
     max-height:100px;
   }
+  .mobile-nav {
+    display: block;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+    height: 50px;
+    width: 100%;
+  }
+  .mobile-nav a {
+    float: right;
+    color: #eee;
+    line-height: 50px;
+    padding-right: 16px;
+    text-decoration: none;
+    transition: color 0.5s;
+  }
+  .mobile-nav a:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+  ul.navbar {
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background: rgba(15, 15, 15, 0.9);
+  overflow-x: hidden;
+  padding: 60px 0 0 0;
+  transition: 0.5s;
+  height: 100%;
+  }
+  ul.navbar .close {
+    display: none;
+  }
+  ul.navbar:target {
+    width: 100%;
+  }
+  ul.navbar:target .close {
+    display: block;
+    position: absolute;
+    right: 32px;
+    top: 16px;
+    color: #ccc;
+    font-weight: normal;
+    font-size: 40px;
+    opacity: 0.8;
+    text-shadow: none;
+    transition: 0.5s;
+  }
+  ul.navbar:target .close:hover {
+    opacity: 1;
+  }
+  ul.navbar:target ~ body {
+    overflow: hidden;
+  }
+  ul.navbar li {
+    display: block;
+    float: none;
+  }
   ul.navbar li a {
+    background: none;
+    text-decoration: none;
+  }
+  ul.navbar li a:hover {
+    background: #555;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /*ul.navbar li a {
       display: block;
       color: #555;
       text-align: center;
@@ -636,8 +709,8 @@ ul.navbar-post.float a img {
       flex-basis: 200px;
       transition: color 0.3s, background 0.3s;
       cursor: pointer;
-  }
-  ul.navbar.float {
+  }*/
+  /*ul.navbar.float {
     background:#ddd;
     position:fixed;
     left: 0;
@@ -656,7 +729,7 @@ ul.navbar-post.float a img {
     padding: 0 0 0 8px;
     transform: translateY(0);
     transition: opacity 0.5s 0.25s, transform 0.5s 0.25s;
-  }
+  }*/
 }
 iframe#video {
   width: 900px;

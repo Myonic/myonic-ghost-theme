@@ -1,14 +1,16 @@
-{{#foreach posts}}
-    <article class="post" style="background-image:url('{{#if image}}{{image}}{{else}}https://unsplash.it/1920/1080/?random&blur{{/if}}')">
-        <a href="{{url}}">
-            <div class="overlay">
-                <header class="post-header">
-                    <h2 class="post-title">{{title}}</h2>
-                </header>
-                <footer class="post-meta">
-                    Published <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time> {{tags limit="1" autolink="false" prefix=" in "}}
-                </footer>
-            </div>
-        </a>
-    </article>
-{{/foreach}}
+{{#get "posts"}}
+  {{#foreach posts}}
+      <article class="post" style="background-image:url('{{#if image}}{{image}}{{else}}https://unsplash.it/800/800/?random&blur{{/if}}')">
+          <a href="{{url}}">
+              <div class="overlay">
+                  <header class="post-header">
+                      <h2 class="post-title">{{title}}</h2>
+                  </header>
+                  <footer class="post-meta">
+                      Published <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time> {{tags limit="1" autolink="false" prefix=" in "}}
+                  </footer>
+              </div>
+          </a>
+      </article>
+  {{/foreach}}
+{{/get}}
