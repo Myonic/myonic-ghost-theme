@@ -1,4 +1,8 @@
 # Todo
+- Make desktop navbar bigger
+- Clean up CSS file formatting and organization
+
+## Old Todo
 - Fix homepage navigation with dropdown
 - Add more homepage company information
 - Add style to author and tag feed pages
